@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro e Login | Eco-Conecta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">🍃</span>
+      <span>Eco-Conecta <small>Ferraz</small></span>
+    </a>
+    <a class="btn btn-outline btn-small" href="index.html">← Voltar para o início</a>
+  </header>
+
+  <main class="auth-wrapper">
+
+    <section class="login-card">
+      <div class="login-visual">
+        <span class="logo-mark big">🍃</span>
+        <h1>Bem-vindo ao<br><strong>Eco-Conecta</strong></h1>
+        <p>Conectando pessoas, coletores e pontos de destinação para uma cidade mais limpa.</p>
+        <div class="visual-icon">♻</div>
+      </div>
+
+      <div class="login-form">
+        <span class="eyebrow">ACESSO À PLATAFORMA</span>
+        <h2>Acesse sua conta</h2>
+        <p>Entre com seus dados para continuar.</p>
+
+        <form>
+          <label for="login">E-mail ou CPF</label>
+          <input id="login" type="text" placeholder="seu@email.com">
+
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" placeholder="Digite sua senha">
+
+          <div class="form-row">
+            <label class="check"><input type="checkbox"> Lembrar-me</label>
+            <a href="#">Esqueci minha senha</a>
+          </div>
+
+          <button class="btn btn-primary full" type="submit">Entrar</button>
+        </form>
+
+        <div class="divider"><span>ou</span></div>
+
+        <button class="google-btn" type="button">G&nbsp; Continuar com Google</button>
+        <p class="register-link">Não tem uma conta? <a href="#cadastro">Cadastre-se</a></p>
+      </div>
+    </section>
+
+    <section class="register-section" id="cadastro">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">NOVO CADASTRO</span>
+          <h2>Crie sua conta</h2>
+        </div>
+        <p>Escolha o perfil e preencha os dados para utilizar a plataforma.</p>
+      </div>
+
+      <div class="register-grid">
+        <article class="register-card">
+          <div class="card-title">
+            <span class="number">1</span>
+            <div><strong>Cadastro de Usuário</strong><small>Dados pessoais</small></div>
+          </div>
+
+          <form>
+            <label for="nome">Nome completo</label>
+            <input id="nome" type="text" placeholder="Digite seu nome completo">
+
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="seu@email.com">
+
+            <label for="cpf">CPF</label>
+            <input id="cpf" type="text" placeholder="000.000.000-00">
+
+            <label for="telefone">Telefone</label>
+            <input id="telefone" type="tel" placeholder="(11) 99999-9999">
+
+            <label for="perfil">Tipo de usuário</label>
+            <select id="perfil">
+              <option value="">Selecione o perfil</option>
+              <option>Cidadão</option>
+              <option>Coletor</option>
+              <option>Empresa</option>
+              <option>Gestora</option>
+            </select>
+
+            <button class="btn btn-primary full" type="submit">Próximo →</button>
+          </form>
+        </article>
+
+        <article class="register-card collector">
+          <div class="card-title">
+            <span class="number">1</span>
+            <div><strong>Cadastro de Coletor</strong><small>Dados profissionais</small></div>
+          </div>
+
+          <form>
+            <label for="coletor-nome">Nome completo</label>
+            <input id="coletor-nome" type="text" placeholder="Digite seu nome completo">
+
+            <label for="coletor-cpf">CPF / CNPJ</label>
+            <input id="coletor-cpf" type="text" placeholder="000.000.000-00">
+
+            <label for="coletor-tel">Telefone</label>
+            <input id="coletor-tel" type="tel" placeholder="(11) 99999-9999">
+
+            <label for="veiculo">Veículo</label>
+            <select id="veiculo">
+              <option value="">Selecione o tipo</option>
+              <option>Caminhão</option>
+              <option>Caminhonete</option>
+              <option>Utilitário</option>
+              <option>Outro</option>
+            </select>
+
+            <label for="placa">Placa</label>
+            <input id="placa" type="text" placeholder="ABC-1D23">
+
+            <button class="btn btn-primary full" type="submit">Próximo →</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="logo">
+      <span class="logo-mark">🍃</span>
+      <span>Eco-Conecta <small>Ferraz</small></span>
+    </div>
+    <span>Projeto Integrador — Gestão de Resíduos Volumosos</span>
+  </footer>
+
+</body>
+</html>
