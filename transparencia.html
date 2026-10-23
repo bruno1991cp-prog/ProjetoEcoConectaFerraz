@@ -215,5 +215,5 @@
   <script>
    function filtrar(){let n=0;document.querySelectorAll('#rows tr:not(.empty-row)').forEach(r=>{let ok=(document.getElementById('q').value===''||r.innerText.toLowerCase().includes(document.getElementById('q').value.toLowerCase()))&&(document.getElementById('tipo').value==='all'||r.dataset.t===document.getElementById('tipo').value)&&(document.getElementById('st').value==='all'||r.dataset.s===document.getElementById('st').value);r.hidden=!ok;if(ok)n++});let empty=document.querySelector('#rows .empty-row');if(empty)empty.hidden=n>0;document.getElementById('count').textContent='Exibindo '+n+' registro(s)'}['q','tipo','st'].forEach(id=>document.getElementById(id).addEventListener('input',filtrar));
   </script>
- </body>
+</body>
 </html>

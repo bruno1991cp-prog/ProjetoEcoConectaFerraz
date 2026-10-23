@@ -356,8 +356,6 @@ footer {
   background: #f1f7f6;
 }
 
-/* Cadastro / Login */
-
 .auth-page { background: #f5faf9; }
 
 .auth-wrapper {
@@ -499,10 +497,19 @@ input:focus, select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rg
 }
 
 .register-link {
+  position: relative;
+  left: 0;
   text-align: center;
   margin-top: 15px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
+}
+
+.register-linkl {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .register-section {
@@ -601,12 +608,6 @@ input:focus, select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rg
   .register-card form label:nth-of-type(1),
   .register-card form input:nth-of-type(1) { grid-column: 1; }
 }
-
-/* ==========================================================
-   TELAS INTERNAS DO PORTAL ECO-CONECTA
-   Estas regras ficam isoladas em body.internal-page para não
-   alterar a Landing Page (index.html) nem Cadastro/Login.
-   ========================================================== */
 
 body.internal-page {
     font-family: 'Inter', Arial, sans-serif;
@@ -1229,7 +1230,7 @@ body.internal-page .success.show {
 }
 
 
-/* Ícone vetorial de madeira: não depende de suporte a emoji do sistema. */
+
 .type-card .wood-icon {
   display: block;
   width: 34px;
@@ -1242,4 +1243,109 @@ body.internal-page .success.show {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+
+.register-section {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 42px 24px 56px;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.register-card {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.register-card form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.register-card form label,
+.register-card form input,
+.register-card form select,
+.register-card form button,
+.register-card form .register-link {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.register-card form label {
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+.register-card form input,
+.register-card form select {
+  display: block;
+  height: 44px;
+  padding: 0 13px;
+  font-size: 14px;
+}
+
+.register-card form .register-link {
+  margin: 10px 0 4px;
+  font-size: 13px;
+}
+
+.register-card form button {
+  min-height: 44px;
+  justify-self: stretch;
+}
+
+@media (max-width: 760px) {
+  .register-section { padding: 28px 16px 40px; }
+  .register-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .register-card { padding: 22px 18px; }
+}
+
+.register-grid {
+  align-items: stretch;
+}
+
+.register-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.register-card form label,
+.register-card form input,
+.register-card form select,
+.register-card form .register-link,
+.register-card form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.register-card form button {
+  margin-top: auto;
+  min-height: 44px;
+  align-self: stretch;
+}
+
+.register-card form .register-link {
+  margin: 10px 0 12px;
 }

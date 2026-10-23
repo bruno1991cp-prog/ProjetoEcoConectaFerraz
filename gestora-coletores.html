@@ -183,7 +183,7 @@
    </main>
   </div>
   <script>
-   function filt(){let n=0;document.querySelectorAll('#rows tr:not(.empty-row)').forEach(r=>{let ok=r.innerText.toLowerCase().includes(document.getElementById('q').value.toLowerCase())&&(document.getElementById('status').value==='all'||r.innerText.includes(document.getElementById('status').value));r.hidden=!ok;if(ok)n++});document.getElementById('count').textContent='Mostrando '+n+' coletor(es')}document.getElementById('q').addEventListener('input',filt);document.getElementById('status').addEventListener('change',filt);document.getElementById('new').onclick=()=>alert('Protótipo visual: o formulário de novo coletor será integrado ao backend.');document.querySelectorAll('.edit').forEach(b=>b.onclick=()=>alert('Protótipo visual: edição ainda não está conectada ao banco de dados.'));
+   function filt(){let n=0;document.querySelectorAll('#rows tr:not(.empty-row)').forEach(r=>{let ok=r.innerText.toLowerCase().includes(document.getElementById('q').value.toLowerCase())&&(document.getElementById('status').value==='all'||r.innerText.includes(document.getElementById('status').value));r.hidden=!ok;if(ok)n++});document.getElementById('count').textContent='Mostrando '+n+' coletor(es)';}document.getElementById('q').addEventListener('input',filt);document.getElementById('status').addEventListener('change',filt);document.getElementById('new').onclick=()=>alert('Protótipo visual: o formulário de novo coletor será integrado ao backend.');document.querySelectorAll('.edit').forEach(b=>b.onclick=()=>alert('Protótipo visual: edição ainda não está conectada ao banco de dados.'));
   </script>
- </body>
+</body>
 </html>
