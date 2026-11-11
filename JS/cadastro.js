@@ -1,18 +1,52 @@
-// Validação básica dos formulários. Não salva dados nem cria contas ainda.
+
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".register-grid form").forEach(function (formulario) {
-    formulario.addEventListener("submit", function (evento) {
-      evento.preventDefault();
-      const campos = formulario.querySelectorAll("input, select");
-      for (const campo of campos) {
-        if (!campo.value.trim()) {
-          mensagemSite("Preencha todos os campos antes de continuar.", "error");
-          campo.focus();
-          return;
+
+    // Campo de seleção do perfil
+    const seletorPerfil = document.getElementById("perfil");
+
+    // Referências dos formulários
+    const formularios = {
+        cidadao: document.getElementById("form-cidadao"),
+        coletor: document.getElementById("form-coletor"),
+        empresa: document.getElementById("form-empresa")
+    };
+
+    // Esconde todos os formulários
+    function ocultarFormularios() {
+
+        Object.values(formularios).forEach(function (formulario) {
+
+            formulario.hidden = true;
+
+        });
+
+    }
+
+    // Exibe o formulário correspondente ao perfil escolhido
+    function exibirFormulario() {
+
+        ocultarFormularios();
+
+        const perfilSelecionado = seletorPerfil.value;
+
+        if (formularios[perfilSelecionado]) {
+
+            formularios[perfilSelecionado].hidden = false;
+
         }
-      }
-      //quando tiver o banco de dados só mudar aqui :P
-      mensagemSite("Formulário preenchido! Para concluir o cadastro, ainda é necessário conectar o sistema a um servidor e banco de dados.", "success");
-    });
-  });
+
+    }
+
+    // Verifica se os elementos existem
+    if (!seletorPerfil) {
+        console.error("Campo de seleção de perfil não encontrado.");
+        return;
+    }
+
+    // Inicializa a página sem formulários abertos
+    ocultarFormularios();
+
+    // Detecta a mudança de perfil
+    seletorPerfil.addEventListener("change", exibirFormulario);
+
 });
