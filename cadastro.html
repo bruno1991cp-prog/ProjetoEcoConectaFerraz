@@ -1,150 +1,924 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro | Eco-Conecta</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <script src="JS/cadastro.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Eco-Conecta Ferraz</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/cadastro.js" defer></script>
+
+    <style>
+        [hidden] {
+            display: none !important;
+        }
+
+        .step-emoji {
+            font-size: 28px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .form-subtitle {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .form-help {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .form-group input[type="file"] {
+            padding: 10px;
+        }
+    </style>
 </head>
+
 <body class="auth-page">
 
-  <header class="topbar">
-   <a class="logo" href="index.html">
-    <span class="logo-mark">
-     🍃
-    </span>
-    <span>
-     Eco-Conecta
-     <small>
-      Ferraz
-     </small>
-    </span>
-   </a>
-   <a class="btn btn-outline btn-small" href="index.html">
-    &larr; Voltar para o in&iacute;cio
-   </a>
-  </header>
-    <section class="register-section" id="cadastro">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">NOVO CADASTRO</span>
-          <h2>Crie sua conta</h2>
-        </div>
-        <p>Escolha o perfil e preencha os dados para utilizar a plataforma.</p>
-      </div>
+    <!-- CABEÇALHO -->
+    <header class="topbar">
 
-      <div class="register-grid">
-        <article class="register-card">
-          <div class="card-title">
-            <span class="number">1</span>
-            <div><strong>Cadastro de Usuário</strong><small>Dados pessoais</small></div>
-          </div>
+        <a class="logo" href="index.html">
+            <span class="logo-mark">
+                🍃
+            </span>
 
-          <form>
-            <label for="nome">Nome completo</label>
-            <input id="nome" type="text" placeholder="Digite seu nome completo">
+            <span>
+                Eco-Conecta
+                <small>Ferraz</small>
+            </span>
+        </a>
 
-            <label for="email">E-mail</label>
-            <input id="email" type="email" placeholder="seu@email.com">
+        <a class="btn btn-primary btn-small" href="index.html">
+            ← Voltar ao início
+        </a>
 
-            <label for="cpf">CPF</label>
-            <input id="cpf" type="text" placeholder="000.000.000-00">
+    </header>
 
-            <label for="telefone">Telefone</label>
-            <input id="telefone" type="tel" placeholder="(11) 99999-9999">
+    <main class="container">
 
-            <label for="perfil">Tipo de usuário</label>
-            <select id="perfil">
-              <option value="">Selecione o perfil</option>
-              <option>Cidadão</option>
-              <option>Coletor</option>
-              <option>Empresa</option>
-              <option>Gestora</option>
-            </select>
-            <p class="register-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
-            <button class="btn btn-primary full" type="submit">Próximo →</button>
-          </form>
-        </article>
+        <section class="register-section" id="formularios-cadastro">
 
-        <article class="register-card collector">
-          <div class="card-title">
-            <span class="number">1</span>
-            <div><strong>Cadastro de Coletor</strong><small>Dados profissionais</small></div>
-          </div>
+            <div class="register-header">
+                <div>
+                    <span class="eyebrow">NOVO CADASTRO</span>
+                    <h1>Crie sua conta</h1>
+                </div>
 
-          <form>
-            <label for="coletor-nome">Nome completo</label>
-            <input id="coletor-nome" type="text" placeholder="Digite seu nome completo">
+                <p>
+                    Escolha seu perfil e preencha os dados
+                    para utilizar a plataforma.
+                </p>
+            </div>
 
-            <label for="coletor-cpf">CPF / CNPJ</label>
-            <input id="coletor-cpf" type="text" placeholder="000.000.000-00">
+            <!-- SELEÇÃO DE PERFIL -->
 
-            <label for="coletor-tel">Telefone</label>
-            <input id="coletor-tel" type="tel" placeholder="(11) 99999-9999">
+            <article class="register-card">
 
-            <label for="veiculo">Veículo</label>
-            <select id="veiculo">
-              <option value="">Selecione o tipo</option>
-              <option>Caminhão</option>
-              <option>Caminhonete</option>
-              <option>Utilitário</option>
-              <option>Outro</option>
-            </select>
+                <div class="section-heading">
+                    <span class="step-emoji">♻️</span>
 
-            <label for="placa">Placa</label>
-            <input id="placa" type="text" placeholder="ABC-1D23">
+                    <div>
+                        <h2>Selecione seu perfil</h2>
+                        <p>Identifique o tipo de usuário</p>
+                    </div>
+                </div>
 
-            <button class="btn btn-primary full" type="submit">Próximo →</button>
-          </form>
-        </article>
-      </div>
-      <form>
-       <label for="coletor-nome">
-        Nome completo
-       </label>
-       <input id="coletor-nome" placeholder="Digite seu nome completo" type="text"/>
-       <label for="coletor-cpf">
-        CPF / CNPJ
-       </label>
-       <input id="coletor-cpf" placeholder="000.000.000-00" type="text"/>
-       <label for="coletor-tel">
-        Telefone
-       </label>
-       <input id="coletor-tel" placeholder="(11) 99999-9999" type="tel"/>
-       <label for="veiculo">
-        Ve&iacute;culo
-       </label>
-       <select id="veiculo">
-        <option value="">
-         Selecione o tipo
-        </option>
-        <option>
-         Caminh&atilde;o
-        </option>
-        <option>
-         Caminhonete
-        </option>
-        <option>
-         Utilit&aacute;rio
-        </option>
-        <option>
-         Outro
-        </option>
-       </select>
-       <label for="placa">
-        Placa
-       </label>
-       <input id="placa" placeholder="ABC-1D23" type="text"/>
-       <button class="btn btn-primary full" type="submit">
-        Pr&oacute;ximo &rarr;
-       </button>
-      </form>
-     </article>
-    </div>
-   </section>
-  </main>
-  <footer>
+                <div class="form-group">
+                    <label for="perfil">Tipo de usuário</label>
+
+                    <select id="perfil" name="perfil" required>
+                        <option value="">Selecione seu perfil</option>
+                        <option value="cidadao">Cidadão</option>
+                        <option value="coletor">Coletor</option>
+                        <option value="empresa">Empresa</option>
+                    </select>
+                </div>
+
+            </article>
+
+
+            <!-- CADASTRO DE CIDADÃO -->
+
+            <article class="register-card" id="form-cidadao" hidden>
+
+                <div class="section-heading">
+                    <span class="step-emoji">👤</span>
+
+                    <div>
+                        <h2>Cadastro de cidadão</h2>
+                        <p>Dados pessoais e endereço</p>
+                    </div>
+                </div>
+
+                <form id="cadastro-cidadao" method="post">
+
+                    <h3 class="form-subtitle">Dados pessoais</h3>
+
+                    <div class="form-group">
+                        <label for="nome-cidadao">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome-cidadao"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-cidadao">E-mail</label>
+                        <input
+                            type="email"
+                            id="email-cidadao"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf-cidadao">CPF</label>
+                        <input
+                            type="text"
+                            id="cpf-cidadao"
+                            name="cpf"
+                            placeholder="000.000.000-00"
+                            maxlength="14"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone-cidadao">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone-cidadao"
+                            name="numeroTelefone"
+                            placeholder="(00) 00000-0000"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Endereço</h3>
+
+                    <div class="form-group">
+                        <label for="tipo-logradouro-cidadao">
+                            Tipo de logradouro
+                        </label>
+
+                        <select
+                            id="tipo-logradouro-cidadao"
+                            name="tipoLogradouro"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="Rua">Rua</option>
+                            <option value="Avenida">Avenida</option>
+                            <option value="Alameda">Alameda</option>
+                            <option value="Travessa">Travessa</option>
+                            <option value="Estrada">Estrada</option>
+                            <option value="Praça">Praça</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logradouro-cidadao">Logradouro</label>
+                        <input
+                            type="text"
+                            id="logradouro-cidadao"
+                            name="logradouro"
+                            placeholder="Nome da rua ou avenida"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero-cidadao">Número</label>
+                        <input
+                            type="text"
+                            id="numero-cidadao"
+                            name="numero"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complemento-cidadao">Complemento</label>
+                        <input
+                            type="text"
+                            id="complemento-cidadao"
+                            name="complemento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro-cidadao">Bairro</label>
+                        <input
+                            type="text"
+                            id="bairro-cidadao"
+                            name="bairro"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade-cidadao">Cidade</label>
+                        <input
+                            type="text"
+                            id="cidade-cidadao"
+                            name="cidade"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado-cidadao">Estado</label>
+                        <input
+                            type="text"
+                            id="estado-cidadao"
+                            name="estado"
+                            maxlength="2"
+                            placeholder="SP"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep-cidadao">CEP</label>
+                        <input
+                            type="text"
+                            id="cep-cidadao"
+                            name="cep"
+                            placeholder="00000-000"
+                            maxlength="9"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Acesso à plataforma</h3>
+
+                    <div class="form-group">
+                        <label for="senha-cidadao">Senha</label>
+                        <input
+                            type="password"
+                            id="senha-cidadao"
+                            name="senha"
+                            placeholder="Crie sua senha"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Criar conta
+                    </button>
+
+                </form>
+
+            </article>
+
+
+            <!-- CADASTRO DE COLETOR AUTÔNOMO -->
+
+            <article class="register-card" id="form-coletor" hidden>
+
+                <div class="section-heading">
+                    <span class="step-emoji">🚛</span>
+
+                    <div>
+                        <h2>Cadastro de coletor</h2>
+                        <p>Cadastro de coletor autônomo</p>
+                    </div>
+                </div>
+
+                <form
+                    id="cadastro-coletor"
+                    method="post"
+                    enctype="multipart/form-data">
+
+                    <h3 class="form-subtitle">Dados pessoais</h3>
+
+                    <div class="form-group">
+                        <label for="nome-coletor">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome-coletor"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-coletor">E-mail</label>
+                        <input
+                            type="email"
+                            id="email-coletor"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf-coletor">CPF</label>
+                        <input
+                            type="text"
+                            id="cpf-coletor"
+                            name="cpf"
+                            placeholder="000.000.000-00"
+                            maxlength="14"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnpj-coletor">CNPJ (se aplicável)</label>
+                        <input
+                            type="text"
+                            id="cnpj-coletor"
+                            name="cnpj"
+                            placeholder="00.000.000/0000-00"
+                            maxlength="18">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone-coletor">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone-coletor"
+                            name="numeroTelefone"
+                            placeholder="(00) 00000-0000"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnh-coletor">Documento CNH</label>
+                        <input
+                            type="file"
+                            id="cnh-coletor"
+                            name="cnh"
+                            accept="image/*,.pdf"
+                            required>
+                        <small class="form-help">
+                            Envie uma imagem nítida ou PDF da CNH.
+                        </small>
+                    </div>
+
+                    <h3 class="form-subtitle">Endereço</h3>
+
+                    <div class="form-group">
+                        <label for="tipo-logradouro-coletor">
+                            Tipo de logradouro
+                        </label>
+
+                        <select
+                            id="tipo-logradouro-coletor"
+                            name="tipoLogradouro"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="Rua">Rua</option>
+                            <option value="Avenida">Avenida</option>
+                            <option value="Alameda">Alameda</option>
+                            <option value="Travessa">Travessa</option>
+                            <option value="Estrada">Estrada</option>
+                            <option value="Praça">Praça</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logradouro-coletor">Logradouro</label>
+                        <input
+                            type="text"
+                            id="logradouro-coletor"
+                            name="logradouro"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero-coletor">Número</label>
+                        <input
+                            type="text"
+                            id="numero-coletor"
+                            name="numero"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complemento-coletor">Complemento</label>
+                        <input
+                            type="text"
+                            id="complemento-coletor"
+                            name="complemento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro-coletor">Bairro</label>
+                        <input
+                            type="text"
+                            id="bairro-coletor"
+                            name="bairro"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade-coletor">Cidade</label>
+                        <input
+                            type="text"
+                            id="cidade-coletor"
+                            name="cidade"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado-coletor">Estado</label>
+                        <input
+                            type="text"
+                            id="estado-coletor"
+                            name="estado"
+                            maxlength="2"
+                            placeholder="SP"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep-coletor">CEP</label>
+                        <input
+                            type="text"
+                            id="cep-coletor"
+                            name="cep"
+                            placeholder="00000-000"
+                            maxlength="9"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Dados do veículo</h3>
+
+                    <div class="form-group">
+                        <label for="placa-coletor">Placa / Matrícula</label>
+                        <input
+                            type="text"
+                            id="placa-coletor"
+                            name="placa"
+                            placeholder="ABC1D23"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modelo-coletor">Modelo do veículo</label>
+                        <input
+                            type="text"
+                            id="modelo-coletor"
+                            name="modelo"
+                            placeholder="Ex.: caminhão, caminhonete..."
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="capacidade-coletor">
+                            Capacidade de carga
+                        </label>
+                        <input
+                            type="number"
+                            id="capacidade-coletor"
+                            name="capacidadeCarga"
+                            min="0"
+                            step="0.01"
+                            placeholder="Informe a capacidade"
+                            required>
+                        <small class="form-help">
+                            Informe a unidade utilizada pelo projeto,
+                            por exemplo, kg.
+                        </small>
+                    </div>
+
+                    <h3 class="form-subtitle">Dados bancários</h3>
+
+                    <div class="form-group">
+                        <label for="banco-coletor">Banco</label>
+                        <input
+                            type="text"
+                            id="banco-coletor"
+                            name="banco"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agencia-coletor">Agência</label>
+                        <input
+                            type="text"
+                            id="agencia-coletor"
+                            name="agencia"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conta-coletor">Número da conta</label>
+                        <input
+                            type="text"
+                            id="conta-coletor"
+                            name="numeroConta"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-conta-coletor">Tipo de conta</label>
+                        <select
+                            id="tipo-conta-coletor"
+                            name="tipoConta"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="Corrente">Corrente</option>
+                            <option value="Poupança">Poupança</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-chave-coletor">
+                            Tipo de chave PIX
+                        </label>
+                        <select
+                            id="tipo-chave-coletor"
+                            name="tipoChavePix"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="CPF">CPF</option>
+                            <option value="CNPJ">CNPJ</option>
+                            <option value="Email">E-mail</option>
+                            <option value="Telefone">Telefone</option>
+                            <option value="Aleatória">Aleatória</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chave-pix-coletor">Chave PIX</label>
+                        <input
+                            type="text"
+                            id="chave-pix-coletor"
+                            name="chavePix"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Acesso à plataforma</h3>
+
+                    <div class="form-group">
+                        <label for="senha-coletor">Senha</label>
+                        <input
+                            type="password"
+                            id="senha-coletor"
+                            name="senha"
+                            placeholder="Crie uma senha forte"
+                            minlength="8"
+                            pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                            title="Use pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial."
+                            autocomplete="new-password"
+                            required>
+
+                        <small class="form-help">
+                            Mínimo de 8 caracteres, com letra maiúscula,
+                            número e caractere especial.
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Enviar cadastro para análise
+                    </button>
+
+                    <small class="form-help">
+                        O acesso às rotas será liberado somente após
+                        a validação dos documentos e dados cadastrados.
+                    </small>
+
+                </form>
+
+            </article>
+
+
+            <!-- CADASTRO DE EMPRESA / GESTORA -->
+
+            <article class="register-card" id="form-empresa" hidden>
+
+                <div class="section-heading">
+                    <span class="step-emoji">🏢</span>
+
+                    <div>
+                        <h2>Cadastro de empresa</h2>
+                        <p>Dados institucionais e do representante legal</p>
+                    </div>
+                </div>
+
+                <form
+                    id="cadastro-empresa"
+                    method="post"
+                    enctype="multipart/form-data">
+
+                    <h3 class="form-subtitle">Dados institucionais</h3>
+
+                    <div class="form-group">
+                        <label for="razao-social">Razão social</label>
+                        <input
+                            type="text"
+                            id="razao-social"
+                            name="razaoSocial"
+                            placeholder="Digite a razão social"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome-fantasia">Nome fantasia</label>
+                        <input
+                            type="text"
+                            id="nome-fantasia"
+                            name="nomeFantasia"
+                            placeholder="Digite o nome fantasia"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnpj-empresa">CNPJ</label>
+                        <input
+                            type="text"
+                            id="cnpj-empresa"
+                            name="cnpj"
+                            placeholder="00.000.000/0000-00"
+                            maxlength="18"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Representante legal</h3>
+
+                    <div class="form-group">
+                        <label for="representante-empresa">
+                            Nome completo
+                        </label>
+                        <input
+                            type="text"
+                            id="representante-empresa"
+                            name="representanteLegal"
+                            placeholder="Nome do representante legal"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf-representante">
+                            CPF do representante
+                        </label>
+                        <input
+                            type="text"
+                            id="cpf-representante"
+                            name="cpfRepresentante"
+                            placeholder="000.000.000-00"
+                            maxlength="14"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-empresa">E-mail institucional</label>
+                        <input
+                            type="email"
+                            id="email-empresa"
+                            name="email"
+                            placeholder="Digite o e-mail institucional"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone-empresa">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone-empresa"
+                            name="numeroTelefone"
+                            placeholder="(00) 00000-0000"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Endereço institucional</h3>
+
+                    <div class="form-group">
+                        <label for="tipo-logradouro-empresa">
+                            Tipo de logradouro
+                        </label>
+
+                        <select
+                            id="tipo-logradouro-empresa"
+                            name="tipoLogradouro"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="Rua">Rua</option>
+                            <option value="Avenida">Avenida</option>
+                            <option value="Alameda">Alameda</option>
+                            <option value="Travessa">Travessa</option>
+                            <option value="Estrada">Estrada</option>
+                            <option value="Praça">Praça</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logradouro-empresa">Logradouro</label>
+                        <input
+                            type="text"
+                            id="logradouro-empresa"
+                            name="logradouro"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero-empresa">Número</label>
+                        <input
+                            type="text"
+                            id="numero-empresa"
+                            name="numero"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complemento-empresa">Complemento</label>
+                        <input
+                            type="text"
+                            id="complemento-empresa"
+                            name="complemento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro-empresa">Bairro</label>
+                        <input
+                            type="text"
+                            id="bairro-empresa"
+                            name="bairro"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade-empresa">Cidade</label>
+                        <input
+                            type="text"
+                            id="cidade-empresa"
+                            name="cidade"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado-empresa">Estado</label>
+                        <input
+                            type="text"
+                            id="estado-empresa"
+                            name="estado"
+                            maxlength="2"
+                            placeholder="SP"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep-empresa">CEP</label>
+                        <input
+                            type="text"
+                            id="cep-empresa"
+                            name="cep"
+                            placeholder="00000-000"
+                            maxlength="9"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Dados bancários da empresa</h3>
+
+                    <div class="form-group">
+                        <label for="banco-empresa">Banco</label>
+                        <input
+                            type="text"
+                            id="banco-empresa"
+                            name="banco"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agencia-empresa">Agência</label>
+                        <input
+                            type="text"
+                            id="agencia-empresa"
+                            name="agencia"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conta-empresa">Número da conta</label>
+                        <input
+                            type="text"
+                            id="conta-empresa"
+                            name="numeroConta"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-conta-empresa">Tipo de conta</label>
+                        <select
+                            id="tipo-conta-empresa"
+                            name="tipoConta"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="Corrente">Corrente</option>
+                            <option value="Poupança">Poupança</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-chave-empresa">
+                            Tipo de chave PIX
+                        </label>
+                        <select
+                            id="tipo-chave-empresa"
+                            name="tipoChavePix"
+                            required>
+                            <option value="">Selecione</option>
+                            <option value="CNPJ">CNPJ</option>
+                            <option value="Email">E-mail</option>
+                            <option value="Telefone">Telefone</option>
+                            <option value="Aleatória">Aleatória</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chave-pix-empresa">Chave PIX</label>
+                        <input
+                            type="text"
+                            id="chave-pix-empresa"
+                            name="chavePix"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Documentação institucional</h3>
+
+                    <div class="form-group">
+                        <label for="estatuto-empresa">
+                            Estatuto social
+                        </label>
+                        <input
+                            type="file"
+                            id="estatuto-empresa"
+                            name="estatutoSocialUrl"
+                            accept=".pdf,image/*"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cartao-cnpj-empresa">
+                            Cartão CNPJ
+                        </label>
+                        <input
+                            type="file"
+                            id="cartao-cnpj-empresa"
+                            name="cartaoCnpjUrl"
+                            accept=".pdf,image/*"
+                            required>
+                    </div>
+
+                    <h3 class="form-subtitle">Acesso à plataforma</h3>
+
+                    <div class="form-group">
+                        <label for="senha-empresa">Senha</label>
+                        <input
+                            type="password"
+                            id="senha-empresa"
+                            name="senha"
+                            placeholder="Crie uma senha forte"
+                            minlength="8"
+                            pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                            title="Use pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial."
+                            autocomplete="new-password"
+                            required>
+
+                        <small class="form-help">
+                            Mínimo de 8 caracteres, com letra maiúscula,
+                            número e caractere especial.
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Enviar cadastro para análise
+                    </button>
+
+                    <small class="form-help">
+                        O cadastro será submetido à análise documental.
+                    </small>
+
+                </form>
+
+            </article>
+
+
+            <!-- LOGIN -->
+
+            <p class="login-link">
+                Já possui uma conta?
+                <a href="login.html">Faça login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
    <div class="logo">
     <span class="logo-mark">
      🍃
@@ -160,5 +934,6 @@
     Projeto Integrador &mdash; Gest&atilde;o de Res&iacute;duos Volumosos
    </span>
   </footer>
+
 </body>
 </html>
