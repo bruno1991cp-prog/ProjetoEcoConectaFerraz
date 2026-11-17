@@ -260,16 +260,23 @@
 
                     <h3 class="form-subtitle">Acesso à plataforma</h3>
 
-                    <div class="form-group">
+                     <div class="form-group">
                         <label for="senha-cidadao">Senha</label>
                         <input
                             type="password"
                             id="senha-cidadao"
                             name="senha"
-                            placeholder="Crie sua senha"
+                            placeholder="Crie uma senha forte"
                             minlength="8"
+                            pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                            title="Use pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial."
                             autocomplete="new-password"
                             required>
+
+                        <small class="form-help">
+                            Mínimo de 8 caracteres, com letra maiúscula,
+                            número e caractere especial.
+                        </small>
                     </div>
 
                     <button type="submit" class="btn-primary">
