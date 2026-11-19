@@ -116,6 +116,12 @@ button, input, select { font: inherit; }
 }
 
 .btn-outline-light {
+  color: var(--green-dark);
+  border: 1px solid rgba(255,255,255,.7);
+  background: white;
+}
+
+.btn-outline-light2 {
   color: white;
   border: 1px solid rgba(255,255,255,.7);
   background: transparent;
