@@ -73,6 +73,12 @@ button, input, select { font: inherit; }
   flex: 1;
 }
 
+.btn-login{
+  font-size: 12px;
+  font-weight: 600;
+  color: #47636c;
+}
+
 .nav a {
   font-size: 12px;
   font-weight: 600;
